@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Carte">
         <activity
-            android:name=".ClickerActivity"
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".map"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
