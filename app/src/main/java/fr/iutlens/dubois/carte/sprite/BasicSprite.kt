@@ -1,6 +1,8 @@
 package fr.iutlens.dubois.carte.sprite
 
 
+
+
 import android.graphics.Canvas
 import android.graphics.RectF
 import androidx.core.graphics.withTranslation
@@ -14,7 +16,7 @@ import fr.iutlens.dubois.carte.utils.SpriteSheet
  */
 class BasicSprite(private val spriteSheet: SpriteSheet,
                   private val tiledArea: TiledArea,
-                        var x: Float, var y: Float,
+                  var x: Float, var y: Float,
                   private var ndx : Int = 0) :
     Sprite {
 
