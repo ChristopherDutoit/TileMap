@@ -22,6 +22,8 @@ class PuzzleActivity : AppCompatActivity() {
         setContentView(R.layout.activity_puzzle)
 
         SpriteSheet.register(R.drawable.festival, 5, 4, this)
+
+        configDrag()
     }
     private fun configDrag() {
         // Création des différents éléments à afficher dans la vue
