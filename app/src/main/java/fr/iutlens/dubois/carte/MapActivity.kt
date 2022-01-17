@@ -31,10 +31,6 @@ override fun onCreate(savedInstanceState: Bundle?) {
         // Par défaut on démarre sur la configuration MapActivity
         configMap()
 
-        // On définit les actions des boutons
-        findViewById<Button>(R.id.buttonMap).setOnClickListener { configMap() }
-        findViewById<Button>(R.id.buttonDrag).setOnClickListener { configDrag() }
-
     }
 
 
