@@ -34,18 +34,10 @@ class Decor(dataSrc: Array<String>? = null) : TileMap {
             )
 
         val fest = arrayOf(
-            "1222232222225",
-            "677778777777A",
-            "BCCCCCCCCCCCG",
-            "BCCCCCCCCCCCG",
-            "BCCCCCCCCCCCG",
-            "BCCCCCCCCCCCG",
-            "BCCCCCCCCCCCG",
-            "BCCCCCCCCCCCG",
-            "BCCCCCCCCCCCG",
-            "122DE222DE225",
-            "677IJ777IJ77A",
-
+            "12345",
+            "6789A",
+            "BCDEF",
+            "GHIJK",
             )
 
           val map = arrayOf(
