@@ -1,12 +1,13 @@
 package fr.iutlens.dubois.carte
 
-import BasicSprite
+//import BasicSprite
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import fr.iutlens.dubois.carte.sprite.BasicSprite
 //import fr.iutlens.dubois.carte.sprite.BasicSprite
 import fr.iutlens.dubois.carte.sprite.Sprite
 import fr.iutlens.dubois.carte.sprite.TiledArea
