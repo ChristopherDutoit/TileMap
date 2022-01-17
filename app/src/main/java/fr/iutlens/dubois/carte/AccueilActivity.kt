@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
 
 class AccueilActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +11,21 @@ class AccueilActivity : AppCompatActivity() {
         setContentView(R.layout.activity_accueil)
     }
     fun onClick(view:View ) {
-        val intent = Intent(this, map::class.java)
+        val intent = Intent(this, MapActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun onClickClicker(view: android.view.View) {
+        val intent = Intent(this, ClickerActivity::class.java)
+        startActivity(intent)
+    }
+    fun onClickPuzzle(view: android.view.View) {
+        val intent = Intent(this, PuzzleActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun onClickMusic(view: android.view.View) {
+       val intent = Intent(this, MusicActivity::class.java)
         startActivity(intent)
     }
 }

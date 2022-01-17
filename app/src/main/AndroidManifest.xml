@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Carte">
         <activity
+            android:name=".MusicActivity"
+            android:exported="false" />
+        <activity
             android:name=".PuzzleActivity"
             android:exported="false" />
         <activity
-            android:name=".map"
+            android:name=".MapActivity"
             android:exported="false" />
         <activity
             android:name=".ClickerActivity"
