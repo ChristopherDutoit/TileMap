@@ -6,4 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".ClickerActivity">
 
+    <TextView
+        android:id="@+id/vueTexte"
+        android:layout_width="163dp"
+        android:layout_height="87dp"
+        android:gravity="center"
+        android:text="Bonsoir"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071" />
+
+    <Button
+        android:id="@+id/bout"
+        android:layout_width="140dp"
+        android:layout_height="78dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Clicker"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/vueTexte"
+        app:layout_constraintEnd_toEndOf="@+id/vueTexte" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
