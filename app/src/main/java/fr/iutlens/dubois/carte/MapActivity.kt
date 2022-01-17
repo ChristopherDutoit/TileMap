@@ -87,7 +87,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
         gameView.apply {
             background = map
             sprite = hero
-            transform = FocusTransform(this, map, hero,12)
+            transform = FocusTransform(this, map, hero,6)
         }
         gameView.onTouch = this::onTouchMap
         gameView.invalidate()
