@@ -16,14 +16,14 @@ class MusicActivity : AppCompatActivity() {
         setContentView(R.layout.activity_music)
         // Chargement des feuilles de sprites
         SpriteSheet.register(R.drawable.decor, 5, 4, this)
-        SpriteSheet.register(R.drawable.car, 3, 1, this)
+        SpriteSheet.register(R.drawable.spritemusic, 6, 1, this)
 
         configDrag()
 
      }
     private val map by lazy { TiledArea(R.drawable.decor, Decor(Decor.map)) }
     private val room by lazy { TiledArea(R.drawable.decor, Decor(Decor.room)) }
-    private val hero by lazy { BasicSprite(R.drawable.car, map, 8.5F, 4.5F) }
+    private val hero by lazy { BasicSprite(R.drawable.spritemusic, map, 8.5F, 4.5F) }
     private val gameView by lazy { findViewById<GameView>(R.id.MusicGameView) }
 
 
@@ -31,12 +31,12 @@ class MusicActivity : AppCompatActivity() {
     private fun configDrag() {
         // Création des différents éléments à afficher dans la vue
         val list = SpriteList() // Notre liste de sprites
-        for(i in 1..7){ // On crée plusieurs sprites aléatoires
+        for(i in 0..5){ // On crée plusieurs sprites aléatoires
             list.add(
-                BasicSprite(R.drawable.car, room,
+                BasicSprite(R.drawable.spritemusic, room,
                 (room.data.sizeX*Math.random()).toFloat(),
                 (room.data.sizeY*Math.random()).toFloat(),
-                (0..2).random())
+                i)
             )
         }
 
