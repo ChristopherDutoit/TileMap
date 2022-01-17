@@ -16,6 +16,9 @@
             android:name=".map"
             android:exported="false" />
         <activity
+            android:name=".ClickerActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
