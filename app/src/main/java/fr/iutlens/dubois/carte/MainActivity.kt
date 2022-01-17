@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         SpriteSheet.register(R.drawable.decor, 5, 4, this)
         SpriteSheet.register(R.drawable.car, 3, 1, this)
 
-        // Par défaut on démarre sur la configuration map
+        // Par défaut on démarre sur la configuration MapActivity
         configMap()
 
         // On définit les actions des boutons
