@@ -4,9 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.165" />
-        <entry key="..\:/Users/bmaxp/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_accueil.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/bmaxp/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_main.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/bmaxp/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_puzzle.xml" value="0.264" />
+        <entry key="..\:/Users/yther/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/yther/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_map.xml" value="0.16304347826086957" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
       </map>
     </option>
