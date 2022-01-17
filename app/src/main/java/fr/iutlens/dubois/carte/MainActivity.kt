@@ -1,12 +1,11 @@
 package fr.iutlens.dubois.carte
 
-import BasicSprite
 import android.graphics.Matrix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.widget.Button
-//import fr.iutlens.dubois.carte.sprite.BasicSprite
+import fr.iutlens.dubois.carte.sprite.BasicSprite
 import fr.iutlens.dubois.carte.sprite.SpriteList
 import fr.iutlens.dubois.carte.sprite.TiledArea
 import fr.iutlens.dubois.carte.transform.FitTransform
