@@ -11,9 +11,9 @@ class AccueilActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_accueil)
     }
+    fun onClick(view:View ) {
+        val intent = Intent(this, map::class.java)
+        startActivity(intent)
+    }
 }
 
-fun onClick(view:View ) {
-//    val intent = Intent(this, MainActivity::class.java)
-//    startActivity(intent)
- }
