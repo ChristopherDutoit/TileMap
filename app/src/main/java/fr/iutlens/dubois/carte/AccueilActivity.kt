@@ -25,9 +25,9 @@ class AccueilActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-//    fun onClickMusic(view: android.view.View) {
-//        val intent = Intent(this, Music::class.java)
-//        startActivity(intent)
-//    }
+    fun onClickMusic(view: android.view.View) {
+   //    val intent = Intent(this, Music::class.java)
+    //    startActivity(intent)
+    }
 }
 
