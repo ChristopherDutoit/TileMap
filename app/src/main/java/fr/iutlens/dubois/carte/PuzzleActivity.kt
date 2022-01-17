@@ -4,7 +4,7 @@ import android.graphics.Matrix
 import android.os.Bundle
 import android.view.MotionEvent
 import androidx.appcompat.app.AppCompatActivity
-import fr.iutlens.dubois.carte.Decor.Companion.fest
+import fr.iutlens.dubois.carte.Decor.Companion.circ
 import fr.iutlens.dubois.carte.sprite.BasicSprite
 import fr.iutlens.dubois.carte.sprite.SpriteList
 import fr.iutlens.dubois.carte.sprite.TiledArea
@@ -14,14 +14,14 @@ import fr.iutlens.dubois.carte.utils.SpriteSheet
 
 class PuzzleActivity : AppCompatActivity() {
 
-    private val fest by lazy { TiledArea(R.drawable.festival, Decor(Decor.fest)) }
+    private val circ by lazy { TiledArea(R.drawable.circuit, Decor(Decor.circ)) }
     private val gameView by lazy { findViewById<GameView>(R.id.gameView) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_puzzle)
 
-        SpriteSheet.register(R.drawable.festival, 5, 4, this)
+        SpriteSheet.register(R.drawable.circuit, 5, 4, this)
 
         configDrag()
     }
@@ -29,16 +29,16 @@ class PuzzleActivity : AppCompatActivity() {
         // Création des différents éléments à afficher dans la vue
         val list = SpriteList() // Notre liste de sprites
         for(i in 1..7){ // On crée plusieurs sprites aléatoires
-            list.add(BasicSprite(R.drawable.festival, fest,
-                (fest.data.sizeX*Math.random()).toFloat(),
-                (fest.data.sizeY*Math.random()).toFloat()))
+            list.add(BasicSprite(R.drawable.circuit, circ,
+                (circ.data.sizeX*Math.random()).toFloat(),
+                (circ.data.sizeY*Math.random()).toFloat()))
         }
 
         // Configuration de gameView
         gameView.apply {
-            background = fest
+            background = circ
             sprite = list
-            transform = FitTransform(this, fest, Matrix.ScaleToFit.CENTER)
+            transform = FitTransform(this, circ, Matrix.ScaleToFit.CENTER)
         }
         gameView.onTouch = this::onTouchDrag
         gameView.invalidate() // On demande à rafraîchir la vue
