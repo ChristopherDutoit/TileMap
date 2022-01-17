@@ -29,8 +29,7 @@ class PuzzleActivity : AppCompatActivity() {
         for(i in 1..7){ // On crée plusieurs sprites aléatoires
             list.add(BasicSprite(R.drawable.festival, fest,
                 (fest.data.sizeX*Math.random()).toFloat(),
-                (fest.data.sizeY*Math.random()).toFloat(),
-                (0..2).random()))
+                (fest.data.sizeY*Math.random()).toFloat()))
         }
 
         // Configuration de gameView
