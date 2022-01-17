@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Carte</string>
     <string name="affiche_festival">Affiche festival</string>
+    <string name="img">img</string>
 </resources>

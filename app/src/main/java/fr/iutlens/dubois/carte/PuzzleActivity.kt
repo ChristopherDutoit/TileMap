@@ -27,7 +27,7 @@ class PuzzleActivity : AppCompatActivity() {
         // Création des différents éléments à afficher dans la vue
         val list = SpriteList() // Notre liste de sprites
         for(i in 1..7){ // On crée plusieurs sprites aléatoires
-            list.add(BasicSprite(R.drawable.festival,
+            list.add(BasicSprite(R.drawable.festival, fest,
                 (fest.data.sizeX*Math.random()).toFloat(),
                 (fest.data.sizeY*Math.random()).toFloat(),
                 (0..2).random()))
