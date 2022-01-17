@@ -8,28 +8,28 @@
 
     <TextView
         android:id="@+id/vueTexte"
-        android:layout_width="163dp"
-        android:layout_height="87dp"
+        android:layout_width="373dp"
+        android:layout_height="320dp"
         android:gravity="center"
-        android:text="Bonsoir"
+        android:text="0"
         android:textAlignment="center"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.879" />
 
     <Button
         android:id="@+id/bout"
-        android:layout_width="140dp"
-        android:layout_height="78dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="162dp"
+        android:layout_height="99dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="44dp"
         android:text="Clicker"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/vueTexte"
-        app:layout_constraintEnd_toEndOf="@+id/vueTexte" />
+        app:layout_constraintBottom_toTopOf="@+id/vueTexte"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
