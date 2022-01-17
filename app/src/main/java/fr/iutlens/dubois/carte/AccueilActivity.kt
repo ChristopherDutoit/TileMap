@@ -1,5 +1,6 @@
 package fr.iutlens.dubois.carte
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,11 +13,7 @@ class AccueilActivity : AppCompatActivity() {
     }
 }
 
-/*fun onClick(view: View) {
-    val textView = findViewById<TextView>(R.id.textView)
-    if (textView.visibility == View.VISIBLE){
-        textView.visibility = View.INVISIBLE
-    } else {
-        textView.visibility = View.VISIBLE
-    }
-} */
+fun onClick(view:View ) {
+//    val intent = Intent(this, MainActivity::class.java)
+//    startActivity(intent)
+ }
