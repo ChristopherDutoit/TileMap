@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Carte">
         <activity
+            android:name=".PuzzleActivity"
+            android:exported="false" />
+        <activity
             android:name=".map"
             android:exported="false" />
         <activity
             android:name=".ClickerActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".AccueilActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

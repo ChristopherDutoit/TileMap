@@ -1,6 +1,5 @@
 package fr.iutlens.dubois.carte
 
-//import BasicSprite
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.RectF
