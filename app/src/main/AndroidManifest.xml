@@ -16,7 +16,7 @@
             android:name=".PuzzleActivity"
             android:exported="false" />
         <activity
-            android:name=".map"
+            android:name=".MapActivity"
             android:exported="false" />
         <activity
             android:name=".ClickerActivity"
