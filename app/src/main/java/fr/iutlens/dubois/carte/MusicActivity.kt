@@ -84,7 +84,8 @@ class MusicActivity : AppCompatActivity() {
     private fun check(list: SpriteList) {
         var result =" "
         list.list.forEach { s : Sprite ->
-            result += "(${s.boundingBox.centerX()},${s.boundingBox.centerX()}) "
+            val basic = s as BasicSprite
+            result += "(${basic.x},${basic.y}) "
         }
         Log.d("list :", result)
 
