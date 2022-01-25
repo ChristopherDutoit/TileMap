@@ -77,7 +77,7 @@ class PuzzleActivity : AppCompatActivity() {
     private fun check(list: SpriteList) {
         for(sprite in list.list){
             val basic = sprite as BasicSprite
-            //(n%l, n/l)
+            //(n%l + 0.5, n/l + 0.5)
             Log.d("check", "${basic.ndx}:(${basic.x},${basic.y})")
         }
     }
