@@ -2,12 +2,13 @@ package fr.iutlens.dubois.carte
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import fr.iutlens.dubois.carte.sprite.BasicSprite
-//import fr.iutlens.dubois.carte.sprite.BasicSprite
 import fr.iutlens.dubois.carte.sprite.Sprite
 import fr.iutlens.dubois.carte.sprite.TiledArea
 import fr.iutlens.dubois.carte.transform.CameraTransform
@@ -84,6 +85,7 @@ class GameView : View, View.OnTouchListener {
         super.onDraw(canvas)
         // On met une couleur de fond
         canvas.drawColor(-0x1000000)
+//        canvas.drawRect(boundingBox, Paint().apply { color = Color.RED; strokeWidth=10f; style = Paint.Style.STROKE })
         canvas.save()
         transform?.get().let { canvas.concat(it) }
         background?.paint(canvas) // Dessin du fond

@@ -26,5 +26,5 @@ class TiledArea(private val sprite: SpriteSheet,  val data: TileMap) : Sprite {
         }
     }
 
-    override val boundingBox = RectF(0f,0f,w*sizeX.toFloat(),h*sizeY.toFloat())
+    override val boundingBox = RectF(0f,0f,w*(sizeX+1).toFloat(),h*(sizeY+1).toFloat())
 }
