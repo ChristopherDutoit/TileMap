@@ -25,8 +25,6 @@ class ClickerActivity : AppCompatActivity() {
                 res.text="Tu as atteint le maximum ("+max.toString()+")"
             }
         }
-
-        //txt.text=clc.toString()
     }
 
 }
