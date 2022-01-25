@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Carte">
         <activity
+            android:name=".CreditsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MusicActivity"
             android:exported="false" />
         <activity
