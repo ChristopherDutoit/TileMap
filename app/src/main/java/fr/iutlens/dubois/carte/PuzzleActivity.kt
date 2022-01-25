@@ -14,7 +14,7 @@ import fr.iutlens.dubois.carte.utils.SpriteSheet
 class PuzzleActivity : AppCompatActivity() {
 
     private val cir by lazy { TiledArea(R.drawable.circuit, Decor(Decor.circ)) }
-    private val gameView by lazy { findViewById<GameView>(R.id.gameView) }
+    private val gameView by lazy { findViewById<GameView>(R.id.PuzzlegameView) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
