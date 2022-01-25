@@ -13,8 +13,8 @@ class Decor(dataSrc: Array<String>? = null) : TileMap {
 
     override operator fun get(i: Int, j: Int): Int { return data[i][j] }
 
-    override val sizeY = data[0].size
-    override val sizeX = data.size
+    override val sizeX = data[0].size
+    override val sizeY = data.size
 
 
     companion object {
