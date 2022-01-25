@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Carte">
         <activity
-            android:name=".creditsActivity"
-            android:exported="false" />
-        <activity
             android:name=".CreditsActivity"
             android:exported="false" />
         <activity

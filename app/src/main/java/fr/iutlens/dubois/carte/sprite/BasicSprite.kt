@@ -36,6 +36,7 @@ class BasicSprite(private val spriteSheet: SpriteSheet,
 
     override fun paint(canvas: Canvas) {
         canvas.withTranslation(xCenter(),yCenter()) {
+           // canvas.scale(3f,3f)
             spriteSheet.paint(this, ndx, -w2, -h2)
         }
     }
