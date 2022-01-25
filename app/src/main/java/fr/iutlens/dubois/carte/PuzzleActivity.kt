@@ -14,6 +14,7 @@ import fr.iutlens.dubois.carte.utils.SpriteSheet
 class PuzzleActivity : AppCompatActivity() {
 
     private val cir by lazy { TiledArea(R.drawable.circuit, Decor(Decor.circ)) }
+    private val room by lazy { TiledArea(R.drawable.decor, Decor(Decor.room)) }
     private val gameView by lazy { findViewById<GameView>(R.id.PuzzlegameView) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +30,7 @@ class PuzzleActivity : AppCompatActivity() {
         // Création des différents éléments à afficher dans la vue
         val list = SpriteList() // Notre liste de sprites
         for(i in 0..(4*5)){ // On crée plusieurs sprites aléatoires
-            list.add(BasicSprite(R.drawable.circuit, cir,
+            list.add(BasicSprite(R.drawable.circuit, room,
                 (cir.data.sizeX*Math.random()).toFloat(),
                 (cir.data.sizeY*Math.random()).toFloat(),
                i))
@@ -37,9 +38,9 @@ class PuzzleActivity : AppCompatActivity() {
 
         // Configuration de gameView
         gameView.apply {
-            background = cir
+            background = room
             sprite = list
-            transform = FitTransform(this, cir, Matrix.ScaleToFit.CENTER)
+            transform = FitTransform(this, room, Matrix.ScaleToFit.CENTER)
         }
         gameView.onTouch = this::onTouchDrag
         gameView.invalidate() // On demande à rafraîchir la vue
