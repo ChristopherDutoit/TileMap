@@ -4,12 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.165" />
-        <entry key="..\:/Users/bmaxp/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_accueil.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/bmaxp/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_clicker.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/bmaxp/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_main.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/bmaxp/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_map.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/bmaxp/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_music.xml" value="0.17300724637681159" />
-        <entry key="..\:/Users/bmaxp/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_puzzle.xml" value="0.2" />
+        <entry key="..\:/Users/yther/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_accueil.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/yther/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_main.xml" value="0.136" />
+        <entry key="..\:/Users/yther/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_map.xml" value="0.152" />
+        <entry key="..\:/Users/yther/AndroidStudioProjects/TileMap/app/src/main/res/layout/activity_puzzle.xml" value="0.13020833333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
       </map>
     </option>
@@ -19,12 +17,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.2" />
-      </ProjectState>
-    </option>
   </component>
 </project>
