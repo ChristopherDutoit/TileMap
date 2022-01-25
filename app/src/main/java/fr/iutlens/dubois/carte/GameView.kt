@@ -7,6 +7,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import fr.iutlens.dubois.carte.sprite.BasicSprite
+//import fr.iutlens.dubois.carte.sprite.BasicSprite
 import fr.iutlens.dubois.carte.sprite.Sprite
 import fr.iutlens.dubois.carte.sprite.TiledArea
 import fr.iutlens.dubois.carte.transform.CameraTransform

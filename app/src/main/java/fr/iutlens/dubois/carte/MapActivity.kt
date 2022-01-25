@@ -13,9 +13,7 @@ import fr.iutlens.dubois.carte.transform.FocusTransform
 import fr.iutlens.dubois.carte.utils.SpriteSheet
 import kotlin.math.abs
 
-
-
-class MainActivity : AppCompatActivity() {
+class MapActivity : AppCompatActivity() {
 
     private val map by lazy { TiledArea(R.drawable.decor, Decor(Decor.map)) }
     private val room by lazy { TiledArea(R.drawable.decor, Decor(Decor.room)) }
@@ -23,10 +21,9 @@ class MainActivity : AppCompatActivity() {
     private val gameView by lazy { findViewById<GameView>(R.id.gameView) }
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_map)
         // Chargement des feuilles de sprites
         SpriteSheet.register(R.drawable.decor, 5, 4, this)
         SpriteSheet.register(R.drawable.car, 3, 1, this)
@@ -34,10 +31,6 @@ class MainActivity : AppCompatActivity() {
         // Par défaut on démarre sur la configuration MapActivity
         configMap()
 
-        // On définit les actions des boutons
-        findViewById<Button>(R.id.buttonMap).setOnClickListener { configMap() }
-        findViewById<Button>(R.id.buttonDrag).setOnClickListener { configDrag() }
-        
     }
 
 
@@ -45,10 +38,12 @@ class MainActivity : AppCompatActivity() {
         // Création des différents éléments à afficher dans la vue
         val list = SpriteList() // Notre liste de sprites
         for(i in 1..7){ // On crée plusieurs sprites aléatoires
-            list.add(BasicSprite(R.drawable.car, room,
+            list.add(
+                BasicSprite(R.drawable.car, room,
                 (room.data.sizeX*Math.random()).toFloat(),
                 (room.data.sizeY*Math.random()).toFloat(),
-                (0..2).random()))
+                (0..2).random())
+            )
         }
 
         // Configuration de gameView
@@ -92,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         gameView.apply {
             background = map
             sprite = hero
-            transform = FocusTransform(this, map, hero,12)
+            transform = FocusTransform(this, map, hero,6)
         }
         gameView.onTouch = this::onTouchMap
         gameView.invalidate()
@@ -104,7 +99,7 @@ class MainActivity : AppCompatActivity() {
     ) = if (event.action == MotionEvent.ACTION_DOWN) {
         var dx = point[0] - hero.xCenter() // calcule le vecteur entre le sprite et la zone touchée
         var dy = point[1] - hero.yCenter()
- //       Log.d("move", "$dx/$dy")
+        //       Log.d("move", "$dx/$dy")
         if (abs(dx) > abs(dy)) { // calcule la direction du déplacement
             dx = if (dx > 0) 1f else -1f // on se déplace de plus ou moins une case
             dy = 0f

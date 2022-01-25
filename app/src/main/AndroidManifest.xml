@@ -13,7 +13,16 @@
             android:name=".MusicActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".PuzzleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClickerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccueilActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
