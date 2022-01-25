@@ -2,9 +2,11 @@ package fr.iutlens.dubois.carte
 
 import android.graphics.Matrix
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
 import androidx.appcompat.app.AppCompatActivity
 import fr.iutlens.dubois.carte.sprite.BasicSprite
+import fr.iutlens.dubois.carte.sprite.Sprite
 import fr.iutlens.dubois.carte.sprite.SpriteList
 import fr.iutlens.dubois.carte.sprite.TiledArea
 import fr.iutlens.dubois.carte.transform.FitTransform
@@ -32,7 +34,8 @@ class PuzzleActivity : AppCompatActivity() {
             list.add(BasicSprite(R.drawable.circuit, cir,
                 (cir.data.sizeX*Math.random()).toFloat(),
                 (cir.data.sizeY*Math.random()).toFloat(),
-               i))
+                i)
+            )
         }
 
         // Configuration de gameView
@@ -63,10 +66,18 @@ class PuzzleActivity : AppCompatActivity() {
                 } ?: false
             }
             MotionEvent.ACTION_UP -> {  // On déselectionne
+                check(list)
                 list.target = null
                 true
             }
             else -> false
+        }
+    }
+
+    private fun check(list: SpriteList) {
+        for(sprite in list.list){
+            val basic = sprite as BasicSprite
+            Log.d("check", "${basic.ndx}:(${basic.x},${basic.y})")
         }
     }
 }
