@@ -19,8 +19,8 @@
 
     <TextView
         android:id="@+id/vueTexte"
-        android:layout_width="179dp"
-        android:layout_height="118dp"
+        android:layout_width="222dp"
+        android:layout_height="158dp"
         android:gravity="center"
         android:text="0"
         android:textAlignment="center"

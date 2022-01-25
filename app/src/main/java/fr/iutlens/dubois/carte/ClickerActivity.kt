@@ -1,13 +1,17 @@
 package fr.iutlens.dubois.carte
 
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 
 class ClickerActivity : AppCompatActivity() {
     private var clc: Int=0
     private var max: Int=20
+    //private var hautbarre: Int=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
