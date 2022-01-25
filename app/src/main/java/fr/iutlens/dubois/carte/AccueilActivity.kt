@@ -28,5 +28,9 @@ class AccueilActivity : AppCompatActivity() {
        val intent = Intent(this, MusicActivity::class.java)
         startActivity(intent)
     }
+    fun onClickCredits(view: android.view.View) {
+        val intent = Intent(this, CreditsActivity::class.java)
+        startActivity(intent)
+    }
 }
 
