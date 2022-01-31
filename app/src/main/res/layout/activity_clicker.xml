@@ -6,4 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".ClickerActivity">
 
+    <Button
+        android:id="@+id/bout"
+        android:layout_width="162dp"
+        android:layout_height="99dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="32dp"
+        android:text="Clicker"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/vueTexte"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/vueTexte"
+        android:layout_width="222dp"
+        android:layout_height="158dp"
+        android:gravity="center"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.741"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.626" />
+
+    <ImageView
+        android:id="@+id/barre_clicker"
+        android:layout_width="95dp"
+        android:layout_height="607dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/barre_clicker" />
+
+    <ImageView
+        android:id="@+id/dark_arrow_clicker"
+        android:layout_width="42dp"
+        android:layout_height="47dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fleche_noire" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
