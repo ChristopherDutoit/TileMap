@@ -3,8 +3,10 @@ package fr.iutlens.dubois.carte
 import android.graphics.Matrix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
 import fr.iutlens.dubois.carte.sprite.BasicSprite
+import fr.iutlens.dubois.carte.sprite.Sprite
 import fr.iutlens.dubois.carte.sprite.SpriteList
 import fr.iutlens.dubois.carte.sprite.TiledArea
 import fr.iutlens.dubois.carte.transform.FitTransform
@@ -72,9 +74,20 @@ class MusicActivity : AppCompatActivity() {
             }
             MotionEvent.ACTION_UP -> {  // On déselectionne
                 list.target = null
+                check(list)
                 true
             }
             else -> false
         }
+    }
+
+    private fun check(list: SpriteList) {
+        var result =" "
+        list.list.forEach { s : Sprite ->
+            val basic = s as BasicSprite
+            result += "(${basic.x},${basic.y}) "
+        }
+        Log.d("list :", result)
+
     }
 }
