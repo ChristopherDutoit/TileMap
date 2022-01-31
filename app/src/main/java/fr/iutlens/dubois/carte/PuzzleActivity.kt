@@ -11,6 +11,7 @@ import fr.iutlens.dubois.carte.sprite.SpriteList
 import fr.iutlens.dubois.carte.sprite.TiledArea
 import fr.iutlens.dubois.carte.transform.FitTransform
 import fr.iutlens.dubois.carte.utils.SpriteSheet
+import kotlin.math.round
 
 
 class PuzzleActivity : AppCompatActivity() {
@@ -77,7 +78,21 @@ class PuzzleActivity : AppCompatActivity() {
     private fun check(list: SpriteList) {
         for(sprite in list.list){
             val basic = sprite as BasicSprite
-            //(n%l + 0.5, n/l + 0.5)
+
+            var erreur = 0f
+
+            val dx = basic.x - basic.ndx % 5 + 0.5f
+            val dy = basic.y - basic.ndx / 4 + 0.5f
+
+            erreur +=  dx * dx + dy * dy
+            //Log.d("erreur actuelle", "$erreur")
+
+            val note = 20 - 5 * erreur
+            //Log.d("note actuelle", "$note")
+
+            //val x = round(basic.x-0.5f)*0.5f
+            //val y = round(basic.y-0.5f)*0.5f
+
             Log.d("check", "${basic.ndx}:(${basic.x},${basic.y})")
         }
     }
