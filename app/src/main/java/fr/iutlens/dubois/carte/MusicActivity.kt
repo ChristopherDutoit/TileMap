@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
+import android.widget.Button
 import fr.iutlens.dubois.carte.sprite.BasicSprite
 import fr.iutlens.dubois.carte.sprite.Sprite
 import fr.iutlens.dubois.carte.sprite.SpriteList
@@ -22,6 +23,10 @@ class MusicActivity : AppCompatActivity() {
         SpriteSheet.register(R.drawable.spritemusic, 6, 1, this)
 
         configDrag()
+        exportBtn.setOnClickListener {
+            val list : SpriteList = gameView.sprite as SpriteList
+            check(list)
+        }
 
      }
     private val map by lazy { TiledArea(R.drawable.decor, Decor(Decor.map)) }
@@ -29,6 +34,7 @@ class MusicActivity : AppCompatActivity() {
     private val music by lazy { TiledArea(R.drawable.music_map, Decor(Decor.music)) }
     private val hero by lazy { BasicSprite(R.drawable.spritemusic, map, 8.5F, 4.5F) }
     private val gameView by lazy { findViewById<GameView>(R.id.MusicGameView) }
+    private val exportBtn :Button by lazy  { findViewById(R.id.exportBtn) }
 
 
 
@@ -60,7 +66,7 @@ class MusicActivity : AppCompatActivity() {
         point: FloatArray,
         event: MotionEvent,
     ) : Boolean {
-        val list = gameView.sprite as? SpriteList ?: return false // On récupère la liste (quitte si erreur)
+        val list = gameView.sprite as? SpriteList ?: return false// On récupère la liste (quitte si erreur)
         return when(event.action) {
             MotionEvent.ACTION_DOWN -> list.setTarget(point[0], point[1]) != null // Sélection du sprite aux coordonnées cliquées
             MotionEvent.ACTION_MOVE -> {
@@ -74,7 +80,7 @@ class MusicActivity : AppCompatActivity() {
             }
             MotionEvent.ACTION_UP -> {  // On déselectionne
                 list.target = null
-                check(list)
+
                 true
             }
             else -> false
@@ -82,12 +88,30 @@ class MusicActivity : AppCompatActivity() {
     }
 
     private fun check(list: SpriteList) {
-        var result =" "
-        list.list.forEach { s : Sprite ->
-            val basic = s as BasicSprite
-            result += "(${basic.x},${basic.y}) "
-        }
-        Log.d("list :", result)
+        var cooX :FloatArray = floatArrayOf(0F, 0F, 0F, 0F, 0F, 0F)
+        var cooY :FloatArray = floatArrayOf(0F, 0F, 0F, 0F, 0F, 0F)
+        var Xok :Float = 0F
+        var Yok :Float = 0.50F
+        var note:Float = 20F
+        var malus:Float =0F
+            var i = 0
+            list.list.forEach { s : Sprite ->
+                var basic = s as BasicSprite
+                cooX[i]= basic.x.toFloat()
+                cooY[i]= basic.y.toFloat()
+                Xok  =  i.toFloat() +2.50F
+                if(Xok <= cooX[i]) {
+                    malus = (cooX[i] - Xok )*10
+                }else{
+                    malus = (Xok - cooX[i])*10
+                }
+                note -= malus
+                 i++
+
+            }
+        Log.d("list :",note.toString())
 
     }
+
 }
+
