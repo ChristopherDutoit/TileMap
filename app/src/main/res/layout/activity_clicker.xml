@@ -7,18 +7,6 @@
     android:id="@+id/constraint_layout"
     tools:context=".ClickerActivity">
 
-    <Button
-        android:id="@+id/bout"
-        android:layout_width="162dp"
-        android:layout_height="99dp"
-        android:text="Clicker"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toEndOf="@+id/barre_hp_clicker"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/barre_hp_clicker"
         android:layout_width="95dp"
@@ -38,7 +26,7 @@
         app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/barre_hp_clicker"
-        app:layout_constraintVertical_bias="0.85"
+        app:layout_constraintVertical_bias="0.50"
         app:srcCompat="@drawable/fleche_noire" />
 
     <TextView
@@ -46,11 +34,36 @@
         android:layout_width="116dp"
         android:layout_height="68dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/bout"
+        app:layout_constraintBottom_toTopOf="@+id/remaining"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.667"
+        app:layout_constraintHorizontal_bias="0.647"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.471" />
+        app:layout_constraintVertical_bias="0.718" />
+
+    <Button
+        android:id="@+id/bout"
+        android:layout_width="162dp"
+        android:layout_height="99dp"
+        android:text="Clicker"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toEndOf="@+id/barre_hp_clicker"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67" />
+
+    <TextView
+        android:id="@+id/remaining"
+        android:layout_width="136dp"
+        android:layout_height="85dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/bout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
