@@ -120,13 +120,23 @@ class PuzzleActivity : AppCompatActivity() {
             val cont = findViewById<View>(R.id.constraintLayout)
             val Moy: TextView = findViewById(R.id.Moyenne)
             val Crit: TextView = findViewById(R.id.Critere)
-            Moy.text = moyennePuzzle.toString()
+            Moy.text = Math.round(moyennePuzzle).coerceIn(0..20).toString()
             cont.visibility = VISIBLE
 
         if(moyennePuzzle == 20f){
             Crit.text = "Parfait"
         }else{
-
+            if(moyennePuzzle >= 15f && moyennePuzzle < 20f){
+                Crit.text = "Très bien"
+            }else{
+                if (moyennePuzzle >= 10f && moyennePuzzle < 15f){
+                    Crit.text = "Bien"
+                }else{
+                    if(moyennePuzzle <= 10f){
+                        Crit.text = "Mauvais"
+                    }
+                }
+            }
         }
     }
 }
