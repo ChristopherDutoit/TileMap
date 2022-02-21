@@ -3,8 +3,8 @@ package fr.iutlens.dubois.carte
 import android.graphics.Matrix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
-import android.widget.Button
 import fr.iutlens.dubois.carte.sprite.BasicSprite
 import fr.iutlens.dubois.carte.sprite.SpriteList
 import fr.iutlens.dubois.carte.sprite.TiledArea
@@ -107,9 +107,33 @@ override fun onCreate(savedInstanceState: Bundle?) {
             dx = 0f
             dy = if (dy > 0) 1f else -1f
         }
-        hero.x += dx
-        hero.y += dy
+        if (valid(hero.x+dx,hero.y+dy,dx,dy)){
+            hero.x += dx
+            hero.y += dy
+        }
+
         gameView.invalidate()
         true
     } else false
+
+    private fun valid(x: Float, y: Float, dx: Float, dy: Float): Boolean {
+        val x1 = (x-0.5).toInt()
+        val y1 = (y-0.5).toInt()
+
+        if (x1 < 0 || y1 <0) {
+            return false
+        }
+        if (x1 >= map.data.sizeX || y1 >= map.data.sizeY) {
+            return false
+        }
+
+        val typeCase = map.data.get(y1, x1)
+        Log.d("valid",typeCase.toString())
+        Log.d("dx",dx.toString())
+        if (typeCase == 11 || typeCase == 15 || typeCase == 10) {
+            return true
+        }
+        return false
+
+    }
 }
