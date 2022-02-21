@@ -23,7 +23,7 @@ class PuzzleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_puzzle)
 
-        SpriteSheet.register(R.drawable.piaf, 3, 3, this)
+        SpriteSheet.register(R.drawable.piaf, 5, 4, this)
 
         configDrag()
     }
@@ -31,7 +31,7 @@ class PuzzleActivity : AppCompatActivity() {
     private fun configDrag() {
         // Création des différents éléments à afficher dans la vue
         val list = SpriteList() // Notre liste de sprites
-        for(i in 0 until 3*3){ // On crée plusieurs sprites aléatoires
+        for(i in 0 until 5*4){ // On crée plusieurs sprites aléatoires
             list.add(BasicSprite(R.drawable.piaf, cir,
                 (cir.data.sizeX*Math.random()).toFloat(),
                 (cir.data.sizeY*Math.random()).toFloat(),
@@ -76,6 +76,7 @@ class PuzzleActivity : AppCompatActivity() {
     }
 
     private fun check(list: SpriteList) {
+        var moyenne = 0f
         for(sprite in list.list){
             val basic = sprite as BasicSprite
 
@@ -87,13 +88,17 @@ class PuzzleActivity : AppCompatActivity() {
             erreur +=  dx * dx + dy * dy
             //Log.d("erreur actuelle", "$erreur")
 
-            val note = 20 - 5 * erreur
+            val note = 20 - 2 * erreur
             //Log.d("note actuelle", "$note")
 
             //val x = round(basic.x-0.5f)*0.5f
             //val y = round(basic.y-0.5f)*0.5f
 
-            Log.d("check", "${basic.ndx}:(${basic.x},${basic.y})")
+            //Log.d("check", "${basic.ndx}:(${basic.x},${basic.y})")
+
+            moyenne += note
         }
+       moyenne /= 9
+        Log.d("moyenne", "${moyenne}")
     }
 }
