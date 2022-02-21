@@ -115,6 +115,10 @@ override fun onCreate(savedInstanceState: Bundle?) {
         if (valid(hero.x+dx,hero.y+dy,-dx,-dy) && valid(hero.x,hero.y,dx,dy)){
             hero.x += dx
             hero.y += dy
+            val intent = Intent(this, ClickerActivity::class.java)
+            when (hero.x to hero.y){
+                4.5f to 1.5f -> startActivity(intent)
+            }
         }
 
         gameView.invalidate()
@@ -135,6 +139,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
             11 -> true
             15 -> dx <= 0 // mur droit
             10 -> dx >=0 //mur gauche
+            7 -> dy >= 0 // porte bas
             else -> false
         }
     }
