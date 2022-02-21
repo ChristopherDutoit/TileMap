@@ -125,6 +125,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
         true
     } else false
 
+
     private fun valid(x: Float, y: Float, dx: Float, dy: Float): Boolean {
         val x1 = (x-0.5).toInt()
         val y1 = (y-0.5).toInt()
