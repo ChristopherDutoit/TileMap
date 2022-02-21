@@ -16,14 +16,14 @@ import kotlin.math.round
 
 class PuzzleActivity : AppCompatActivity() {
 
-    private val cir by lazy { TiledArea(R.drawable.circuit, Decor(Decor.circ)) }
+    private val cir by lazy { TiledArea(R.drawable.piaf, Decor(Decor.circ)) }
     private val gameView by lazy { findViewById<GameView>(R.id.PuzzlegameView) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_puzzle)
 
-        SpriteSheet.register(R.drawable.circuit, 5, 4, this)
+        SpriteSheet.register(R.drawable.piaf, 3, 3, this)
 
         configDrag()
     }
@@ -31,8 +31,8 @@ class PuzzleActivity : AppCompatActivity() {
     private fun configDrag() {
         // Création des différents éléments à afficher dans la vue
         val list = SpriteList() // Notre liste de sprites
-        for(i in 0 until 5*4){ // On crée plusieurs sprites aléatoires
-            list.add(BasicSprite(R.drawable.circuit, cir,
+        for(i in 0 until 3*3){ // On crée plusieurs sprites aléatoires
+            list.add(BasicSprite(R.drawable.piaf, cir,
                 (cir.data.sizeX*Math.random()).toFloat(),
                 (cir.data.sizeY*Math.random()).toFloat(),
                 i)

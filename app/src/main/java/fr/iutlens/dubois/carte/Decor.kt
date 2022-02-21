@@ -34,10 +34,9 @@ class Decor(dataSrc: Array<String>? = null) : TileMap {
             )
 
         val circ = arrayOf(
-            "12345",
-            "6789A",
-            "BCDEF",
-            "GHIJK",
+            "123",
+            "456",
+            "789",
             )
 
           val map = arrayOf(
