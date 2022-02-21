@@ -1,5 +1,6 @@
 package fr.iutlens.dubois.carte
 
+import android.content.Intent
 import android.graphics.Matrix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -33,6 +34,10 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     }
 
+    fun onClickAccueil(view: android.view.View) {
+        val intent = Intent(this, AccueilActivity::class.java)
+        startActivity(intent)
+    }
 
     private fun configDrag() {
         // Création des différents éléments à afficher dans la vue
