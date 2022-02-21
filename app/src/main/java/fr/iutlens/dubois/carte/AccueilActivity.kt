@@ -32,5 +32,6 @@ class AccueilActivity : AppCompatActivity() {
         val intent = Intent(this, CreditsActivity::class.java)
         startActivity(intent)
     }
+
 }
 
