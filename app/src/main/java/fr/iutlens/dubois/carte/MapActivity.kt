@@ -17,7 +17,7 @@ class MapActivity : AppCompatActivity() {
 
     private val map by lazy { TiledArea(R.drawable.decor, Decor(Decor.map)) }
     private val room by lazy { TiledArea(R.drawable.decor, Decor(Decor.room)) }
-    private val hero by lazy { BasicSprite(R.drawable.car, map, 8.5F, 4.5F) }
+    private val hero by lazy { BasicSprite(R.drawable.car, map, 4.5F, 2.5F) }
     private val gameView by lazy { findViewById<GameView>(R.id.gameView) }
 
 
@@ -107,7 +107,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
             dx = 0f
             dy = if (dy > 0) 1f else -1f
         }
-        if (valid(hero.x+dx,hero.y+dy,dx,dy)){
+        if (valid(hero.x+dx,hero.y+dy,-dx,-dy) && valid(hero.x,hero.y,dx,dy)){
             hero.x += dx
             hero.y += dy
         }
@@ -120,20 +120,30 @@ override fun onCreate(savedInstanceState: Bundle?) {
         val x1 = (x-0.5).toInt()
         val y1 = (y-0.5).toInt()
 
-        if (x1 < 0 || y1 <0) {
-            return false
-        }
-        if (x1 >= map.data.sizeX || y1 >= map.data.sizeY) {
-            return false
-        }
 
-        val typeCase = map.data.get(y1, x1)
+        val typeCase = getType(y1, x1) ?: return false
+
         Log.d("valid",typeCase.toString())
         Log.d("dx",dx.toString())
-        if (typeCase == 11 || typeCase == 15 || typeCase == 10) {
-            return true
-        }
-        return false
 
+        return when(typeCase){
+            11 -> true
+            15 -> dx <= 0 // mur droit
+            10 -> dx >=0 //mur gauche
+            else -> false
+        }
+    }
+
+    private fun getType(y: Int, x: Int): Int? {
+
+        if (x < 0 || y < 0) {
+            return null
+        }
+
+        if (x >= map.data.sizeX || y >= map.data.sizeY) {
+            return null
+        }
+        val typeCase = map.data.get(y, x)
+        return typeCase
     }
 }
