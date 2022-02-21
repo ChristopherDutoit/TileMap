@@ -4,6 +4,10 @@ import android.graphics.Matrix
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
+import android.view.View
+import android.view.View.VISIBLE
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import fr.iutlens.dubois.carte.sprite.BasicSprite
 import fr.iutlens.dubois.carte.sprite.Sprite
@@ -18,12 +22,23 @@ class PuzzleActivity : AppCompatActivity() {
 
     private val cir by lazy { TiledArea(R.drawable.piaf, Decor(Decor.circ)) }
     private val gameView by lazy { findViewById<GameView>(R.id.PuzzlegameView) }
+    var moyennePuzzle = 0f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_puzzle)
 
         SpriteSheet.register(R.drawable.piaf, 5, 4, this)
+
+        val adder: Button = findViewById(R.id.termine)
+        adder.setOnClickListener{
+            end()
+        }
+
+        val retour: Button = findViewById(R.id.retour)
+        retour.setOnClickListener{
+            finish()
+        }
 
         configDrag()
     }
@@ -75,8 +90,7 @@ class PuzzleActivity : AppCompatActivity() {
         }
     }
 
-    private fun check(list: SpriteList) {
-        var moyenne = 0f
+     fun check(list: SpriteList) {
         for(sprite in list.list){
             val basic = sprite as BasicSprite
 
@@ -96,9 +110,23 @@ class PuzzleActivity : AppCompatActivity() {
 
             //Log.d("check", "${basic.ndx}:(${basic.x},${basic.y})")
 
-            moyenne += note
+            moyennePuzzle += note
         }
-       moyenne /= 9
-        Log.d("moyenne", "${moyenne}")
+       moyennePuzzle /= 9
+        //Log.d("moyenne", "${moyennePuzzle}")
+    }
+
+    private fun end(){
+            val cont = findViewById<View>(R.id.constraintLayout)
+            val Moy: TextView = findViewById(R.id.Moyenne)
+            val Crit: TextView = findViewById(R.id.Critere)
+            Moy.text = moyennePuzzle.toString()
+            cont.visibility = VISIBLE
+
+        if(moyennePuzzle == 20f){
+            Crit.text = "Parfait"
+        }else{
+
+        }
     }
 }
