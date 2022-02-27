@@ -112,7 +112,7 @@ class PuzzleActivity : AppCompatActivity() {
 
             moyennePuzzle += note
         }
-       moyennePuzzle /= 9
+       moyennePuzzle /= 20
         //Log.d("moyenne", "${moyennePuzzle}")
     }
 
