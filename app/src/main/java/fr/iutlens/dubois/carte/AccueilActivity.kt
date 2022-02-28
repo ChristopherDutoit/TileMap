@@ -10,6 +10,12 @@ class AccueilActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_accueil)
     }
+    fun onClick(view:View ) {
+        val intent = Intent(this, MapActivity::class.java)
+        startActivity(intent)
+    }
+
+
     fun onClickCredits(view: android.view.View) {
         val intent = Intent(this, CreditsActivity::class.java)
         startActivity(intent)
