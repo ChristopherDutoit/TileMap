@@ -1,10 +1,11 @@
 package fr.iutlens.dubois.carte
 
+import android.content.Intent
 import android.graphics.Matrix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
-import android.widget.Button
 import fr.iutlens.dubois.carte.sprite.BasicSprite
 import fr.iutlens.dubois.carte.sprite.SpriteList
 import fr.iutlens.dubois.carte.sprite.TiledArea
@@ -17,7 +18,7 @@ class MapActivity : AppCompatActivity() {
 
     private val map by lazy { TiledArea(R.drawable.decor, Decor(Decor.map)) }
     private val room by lazy { TiledArea(R.drawable.decor, Decor(Decor.room)) }
-    private val hero by lazy { BasicSprite(R.drawable.car, map, 8.5F, 4.5F) }
+    private val hero by lazy { BasicSprite(R.drawable.car, map, 4.5F, 2.5F) }
     private val gameView by lazy { findViewById<GameView>(R.id.gameView) }
 
 
@@ -33,6 +34,10 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     }
 
+    fun onClickAccueil(view: android.view.View) {
+        val intent = Intent(this, AccueilActivity::class.java)
+        startActivity(intent)
+    }
 
     private fun configDrag() {
         // Création des différents éléments à afficher dans la vue
@@ -107,9 +112,58 @@ override fun onCreate(savedInstanceState: Bundle?) {
             dx = 0f
             dy = if (dy > 0) 1f else -1f
         }
-        hero.x += dx
-        hero.y += dy
+        if (valid(hero.x+dx,hero.y+dy,-dx,-dy) && valid(hero.x,hero.y,dx,dy)){
+            hero.x += dx
+            hero.y += dy
+            val intent = Intent(this, ClickerActivity::class.java)
+            val music = Intent(this, MusicActivity::class.java)
+            val puzzle = Intent(this, PuzzleActivity::class.java)
+            val credits = Intent(this, CreditsActivity::class.java)
+            when (hero.x to hero.y){
+                4.5f to 1.5f -> startActivity(intent)
+                11.5f to 1.5f -> startActivity(music)
+                17.5f to 1.5f -> startActivity(puzzle)
+                20.5f to 1.5f -> startActivity(credits)
+                21.5f to 1.5f -> startActivity(credits)
+            }
+        }
+
         gameView.invalidate()
         true
     } else false
+
+
+    private fun valid(x: Float, y: Float, dx: Float, dy: Float): Boolean {
+        val x1 = (x-0.5).toInt()
+        val y1 = (y-0.5).toInt()
+
+
+        val typeCase = getType(y1, x1) ?: return false
+
+        Log.d("valid",typeCase.toString())
+        Log.d("dx",dx.toString())
+
+        return when(typeCase){
+            11 -> true
+            15 -> dx <= 0 // mur droit
+            10 -> dx >=0 //mur gauche
+            7 -> dy >= 0 // porte gauche
+            8 -> dy >= 0 // portedroite
+
+            else -> false
+        }
+    }
+
+    private fun getType(y: Int, x: Int): Int? {
+
+        if (x < 0 || y < 0) {
+            return null
+        }
+
+        if (x >= map.data.sizeX || y >= map.data.sizeY) {
+            return null
+        }
+        val typeCase = map.data.get(y, x)
+        return typeCase
+    }
 }
