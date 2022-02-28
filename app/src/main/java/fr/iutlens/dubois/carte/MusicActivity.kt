@@ -1,17 +1,21 @@
 package fr.iutlens.dubois.carte
 
+import android.content.Intent
 import android.graphics.Matrix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
+import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import fr.iutlens.dubois.carte.sprite.BasicSprite
 import fr.iutlens.dubois.carte.sprite.Sprite
 import fr.iutlens.dubois.carte.sprite.SpriteList
 import fr.iutlens.dubois.carte.sprite.TiledArea
 import fr.iutlens.dubois.carte.transform.FitTransform
 import fr.iutlens.dubois.carte.utils.SpriteSheet
+import kotlin.math.roundToInt
 
 class MusicActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +32,11 @@ class MusicActivity : AppCompatActivity() {
             check(list)
         }
 
+        accueilBtn.setOnClickListener{
+            val intent = Intent(this, AccueilActivity::class.java)
+            startActivity(intent)
+        }
+
      }
     private val map by lazy { TiledArea(R.drawable.decor, Decor(Decor.map)) }
     private val room by lazy { TiledArea(R.drawable.decor, Decor(Decor.room)) }
@@ -35,6 +44,10 @@ class MusicActivity : AppCompatActivity() {
     private val hero by lazy { BasicSprite(R.drawable.spritemusic, map, 8.5F, 4.5F) }
     private val gameView by lazy { findViewById<GameView>(R.id.MusicGameView) }
     private val exportBtn :Button by lazy  { findViewById(R.id.exportBtn) }
+    private val bk :TextView by lazy  { findViewById(R.id.backgroud) }
+    private val accueilBtn : Button by lazy { findViewById(R.id.backacceuil)}
+    private val noteTxt :TextView by lazy  { findViewById(R.id.textView5) }
+
 
 
 
@@ -100,18 +113,40 @@ class MusicActivity : AppCompatActivity() {
                 cooX[i]= basic.x.toFloat()
                 cooY[i]= basic.y.toFloat()
                 Xok  =  i.toFloat() +2.50F
+                Yok= 0.5F
                 if(Xok <= cooX[i]) {
                     malus = (cooX[i] - Xok )*10
                 }else{
                     malus = (Xok - cooX[i])*10
                 }
                 note -= malus
+                if(Yok <= cooY[i]) {
+                    malus = (cooY[i] - Yok )*5
+                }else{
+                    malus = (Yok - cooY[i])*5
+                }
+                note -= malus
                  i++
 
             }
-        Log.d("list :",note.toString())
+
+        if(note < 0){
+            note = 0F
+        }
+
+        bk.setVisibility(View.VISIBLE)
+        exportBtn.setVisibility(View.GONE)
+        accueilBtn.setVisibility(View.VISIBLE)
+
+        val Finalnote  = note.roundToInt().toString()
+        noteTxt.setText(Finalnote)
+        Log.d("list :", note.toString())
 
     }
 
 }
+
+
+
+
 
