@@ -227,4 +227,9 @@ class ClickerActivity : AppCompatActivity() {
         //Et enfin on remplace la flèche par son clone avec toutes les nouvelles modifications
         set.applyTo(constraintLayout)
     }
+
+    fun onClickAccueil(view: android.view.View) {
+        val intent = Intent(this, AccueilActivity::class.java)
+        startActivity(intent)
+    }
 }

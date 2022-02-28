@@ -116,8 +116,15 @@ override fun onCreate(savedInstanceState: Bundle?) {
             hero.x += dx
             hero.y += dy
             val intent = Intent(this, ClickerActivity::class.java)
+            val music = Intent(this, MusicActivity::class.java)
+            val puzzle = Intent(this, PuzzleActivity::class.java)
+            val credits = Intent(this, CreditsActivity::class.java)
             when (hero.x to hero.y){
                 4.5f to 1.5f -> startActivity(intent)
+                11.5f to 1.5f -> startActivity(music)
+                17.5f to 1.5f -> startActivity(puzzle)
+                20.5f to 1.5f -> startActivity(credits)
+                21.5f to 1.5f -> startActivity(credits)
             }
         }
 
@@ -140,7 +147,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
             11 -> true
             15 -> dx <= 0 // mur droit
             10 -> dx >=0 //mur gauche
-            7 -> dy >= 0 // porte bas
+            7 -> dy >= 0 // porte gauche
+            8 -> dy >= 0 // portedroite
+
             else -> false
         }
     }
