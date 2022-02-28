@@ -8,6 +8,7 @@ import android.view.View
 import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import fr.iutlens.dubois.carte.sprite.BasicSprite
 import fr.iutlens.dubois.carte.sprite.Sprite
@@ -29,6 +30,8 @@ class PuzzleActivity : AppCompatActivity() {
         setContentView(R.layout.activity_puzzle)
 
         SpriteSheet.register(R.drawable.piaf, 5, 4, this)
+
+        Toast.makeText(this, "! Objectif: place précisément les pièces du Puzzle !", Toast.LENGTH_LONG).show()
 
         val adder: Button = findViewById(R.id.termine)
         adder.setOnClickListener{
