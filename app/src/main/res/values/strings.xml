@@ -2,5 +2,10 @@
     <string name="app_name">Carte</string>
     <string name="affiche_festival">Affiche festival</string>
     <string name="img">img</string>
+    <string name="termin">Terminé</string>
+    <string name="_20">20</string>
+    <string name="tr_s_bien">Très bien</string>
+    <string name="retour">Retour</string>
+    <string name="note">Note</string>
     <string name="damien_josse">Damien JOSSE</string>
 </resources>
