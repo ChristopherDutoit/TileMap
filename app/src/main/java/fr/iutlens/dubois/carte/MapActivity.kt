@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
+import android.widget.Toast
 import fr.iutlens.dubois.carte.sprite.BasicSprite
 import fr.iutlens.dubois.carte.sprite.SpriteList
 import fr.iutlens.dubois.carte.sprite.TiledArea
@@ -37,6 +38,11 @@ override fun onCreate(savedInstanceState: Bundle?) {
     fun onClickAccueil(view: android.view.View) {
         val intent = Intent(this, AccueilActivity::class.java)
         startActivity(intent)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("carte", "onresume")
     }
 
     private fun configDrag() {
@@ -121,10 +127,17 @@ override fun onCreate(savedInstanceState: Bundle?) {
             val credits = Intent(this, CreditsActivity::class.java)
             when (hero.x to hero.y){
                 4.5f to 1.5f -> startActivity(intent)
+                4.5f to 2.5f -> Toast.makeText(this, "Salle Amphi", Toast.LENGTH_SHORT).show()
                 11.5f to 1.5f -> startActivity(music)
+                11.5f to 2.5f -> Toast.makeText(this, "Salle 1f", Toast.LENGTH_SHORT).show()
                 17.5f to 1.5f -> startActivity(puzzle)
+                17.5f to 2.5f -> Toast.makeText(this, "Salle 2f", Toast.LENGTH_SHORT).show()
                 20.5f to 1.5f -> startActivity(credits)
+                20.5f to 2.5f -> Toast.makeText(this, "Crédit", Toast.LENGTH_SHORT).show()
                 21.5f to 1.5f -> startActivity(credits)
+                21.5f to 2.5f -> Toast.makeText(this, "Crédit", Toast.LENGTH_SHORT).show()
+
+
             }
         }
 
