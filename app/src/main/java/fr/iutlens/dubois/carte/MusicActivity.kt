@@ -42,8 +42,7 @@ class MusicActivity : AppCompatActivity() {
         }
 
         accueilBtn.setOnClickListener{
-            val intent = Intent(this, finalscreen::class.java)
-            startActivity(intent)
+            finish()
         }
 
      }
