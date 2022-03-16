@@ -1,5 +1,6 @@
 package fr.iutlens.dubois.carte
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Matrix
 import androidx.appcompat.app.AppCompatActivity
@@ -41,7 +42,7 @@ class MusicActivity : AppCompatActivity() {
         }
 
         accueilBtn.setOnClickListener{
-            val intent = Intent(this, AccueilActivity::class.java)
+            val intent = Intent(this, finalscreen::class.java)
             startActivity(intent)
         }
 
@@ -147,10 +148,18 @@ class MusicActivity : AppCompatActivity() {
         exportBtn.setVisibility(View.GONE)
         accueilBtn.setVisibility(View.VISIBLE)
 
-        val Finalnote  = note.roundToInt().toString()
-        noteTxt.setText(Finalnote)
+        val finalnote  = note.roundToInt()
+        noteTxt.setText(finalnote.toString())
         votreNote.setText("Votre note :")
         Log.d("list :", note.toString())
+        val sharedPref = this.getSharedPreferences(
+            "notes", Context.MODE_PRIVATE)
+        with (sharedPref.edit()) {
+            putInt("music", finalnote)
+            apply()
+        }
+
+
 
     }
 
