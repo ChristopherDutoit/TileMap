@@ -40,6 +40,11 @@ override fun onCreate(savedInstanceState: Bundle?) {
         startActivity(intent)
     }
 
+    override fun onResume() {
+        super.onResume()
+        Log.d("carte", "onresume")
+    }
+
     private fun configDrag() {
         // Création des différents éléments à afficher dans la vue
         val list = SpriteList() // Notre liste de sprites
