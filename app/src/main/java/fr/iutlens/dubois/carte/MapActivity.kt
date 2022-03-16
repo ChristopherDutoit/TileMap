@@ -48,7 +48,13 @@ override fun onCreate(savedInstanceState: Bundle?) {
         val music = sharedPref.getInt("music",-1)
         Log.d("carte", "onresume music: $music ")
 
-        if (music != -1) {
+        val click = sharedPref.getInt("clicker",-1)
+        Log.d("carte", "onresume music: $click ")
+
+        val puzzle = sharedPref.getInt("puzzle",-1)
+        Log.d("carte", "onresume music: $puzzle ")
+
+        if (music != -1 && click != -1 && puzzle != -1) {
             val intent = Intent(this, finalscreen  ::class.java)
             startActivity(intent)
         }
