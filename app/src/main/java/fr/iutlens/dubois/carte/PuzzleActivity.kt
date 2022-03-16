@@ -22,7 +22,7 @@ import kotlin.math.round
 
 class PuzzleActivity : AppCompatActivity() {
 
-    private val cir by lazy { TiledArea(R.drawable.piaf, Decor(Decor.circ)) }
+    private val cir by lazy { TiledArea(R.drawable.eaut, Decor(Decor.circ)) }
     private val gameView by lazy { findViewById<GameView>(R.id.PuzzlegameView) }
     var moyennePuzzle = 0f
 
@@ -30,7 +30,8 @@ class PuzzleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_puzzle)
 
-        SpriteSheet.register(R.drawable.piaf, 5, 4, this)
+        SpriteSheet.register(R.drawable.eaut, 5, 4, this)
+        SpriteSheet.register(R.drawable.eau, 5, 4, this)
 
         Toast.makeText(
             this,
@@ -46,6 +47,7 @@ class PuzzleActivity : AppCompatActivity() {
         val retour: Button = findViewById(R.id.retour)
         retour.setOnClickListener {
             finish()
+
         }
 
         configDrag()
@@ -57,7 +59,7 @@ class PuzzleActivity : AppCompatActivity() {
         for (i in 0 until 5 * 4) { // On crée plusieurs sprites aléatoires
             list.add(
                 BasicSprite(
-                    R.drawable.piaf, cir,
+                    R.drawable.eau, cir,
                     (cir.data.sizeX * Math.random()).toFloat(),
                     (cir.data.sizeY * Math.random()).toFloat(),
                     i
