@@ -55,7 +55,7 @@ class Decor(dataSrc: Array<String>? = null) : TileMap {
         )
 
         val music = arrayOf(
-            "123456789",
+            "12345678",
 
 
 

@@ -80,7 +80,7 @@
         android:id="@+id/textView14"
         android:layout_width="601dp"
         android:layout_height="274dp"
-        android:text="Oh non le DS de théorie du singal va commencé !     Tu dois remettre les signaux a la bonne place ET TU DOIS SUROUT AVOIR LA MOYENNE"
+        android:text="Oh non, le DS de théorie du signal va commencer ! Tu dois remettre les signaux à la bonne place ET TU DOIS SURTOUT AVOIR LA MOYENNE."
         android:textAlignment="center"
         android:textColor="#FBF9F9"
         android:textSize="34sp"
