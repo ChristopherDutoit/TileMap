@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/constraint_layout"
+    android:id="@+id/img_face"
+    android:background="@color/white"
     tools:context=".ClickerActivity">
 
     <ImageView
@@ -29,42 +30,29 @@
         app:layout_constraintVertical_bias="0.50"
         app:srcCompat="@drawable/fleche_noire" />
 
-    <TextView
-        android:id="@+id/test1"
-        android:layout_width="116dp"
-        android:layout_height="68dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/remaining"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.647"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.718" />
-
-    <Button
-        android:id="@+id/bout"
-        android:layout_width="162dp"
-        android:layout_height="99dp"
-        android:text="Clicker"
-        android:textSize="24sp"
+    <ImageView
+        android:id="@+id/code_face"
+        android:layout_width="294dp"
+        android:layout_height="774dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toEndOf="@+id/barre_hp_clicker"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.67" />
-
-    <TextView
-        android:id="@+id/remaining"
-        android:layout_width="136dp"
-        android:layout_height="85dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/bout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:srcCompat="@drawable/ordi_face_new" />
+
+    <TextView
+        android:id="@+id/temps"
+        android:layout_width="145dp"
+        android:layout_height="48dp"
+        android:text="0s"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/barre_hp_clicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/button6"
