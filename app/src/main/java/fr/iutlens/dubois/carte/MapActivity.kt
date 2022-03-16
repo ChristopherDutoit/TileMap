@@ -1,5 +1,6 @@
 package fr.iutlens.dubois.carte
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Matrix
 import androidx.appcompat.app.AppCompatActivity
@@ -42,7 +43,16 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     override fun onResume() {
         super.onResume()
-        Log.d("carte", "onresume")
+        val sharedPref = this.getSharedPreferences("notes", Context.MODE_PRIVATE)
+
+        val music = sharedPref.getInt("music",-1)
+        Log.d("carte", "onresume music: $music ")
+
+        if (music != -1) {
+            val intent = Intent(this, finalscreen  ::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun configDrag() {
