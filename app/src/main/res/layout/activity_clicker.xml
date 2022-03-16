@@ -43,26 +43,17 @@
 
     <TextView
         android:id="@+id/temps"
-        android:layout_width="145dp"
-        android:layout_height="48dp"
+        android:layout_width="264dp"
+        android:layout_height="153dp"
+        android:gravity="bottom|center"
         android:text="0s"
-        android:gravity="center"
-        android:textSize="25dp"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/barre_hp_clicker"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/button6"
-        android:layout_width="40dip"
-        android:layout_height="40dip"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/home"
-        android:onClick="onClickAccueil"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.593"
+        app:layout_constraintStart_toStartOf="@+id/code_face"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
