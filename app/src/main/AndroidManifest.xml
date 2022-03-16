@@ -10,13 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Carte">
         <activity
+            android:name=".finalscreen"
+            android:exported="false" />
+        <activity
             android:name=".CreditsActivity"
             android:exported="false" />
         <activity
             android:name=".MusicActivity"
             android:exported="false"
-            android:screenOrientation = "landscape"
-            />
+            android:screenOrientation="landscape" />
         <activity
             android:name=".PuzzleActivity"
             android:exported="false" />
