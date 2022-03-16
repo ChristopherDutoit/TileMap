@@ -54,17 +54,17 @@
 
     <TextView
         android:id="@+id/temps"
-        android:layout_width="316dp"
-        android:layout_height="75dp"
-        android:gravity="center_horizontal"
+        android:layout_width="278dp"
+        android:layout_height="128dp"
+        android:gravity="bottom|center_horizontal"
         android:text="0s"
         android:textColor="@color/black"
         android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/barre_hp_clicker"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.367"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="@+id/code_face"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.986" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
