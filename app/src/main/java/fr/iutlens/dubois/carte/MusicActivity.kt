@@ -32,6 +32,14 @@ class MusicActivity : AppCompatActivity() {
             check(list)
         }
 
+        startBtn.setOnClickListener {
+            bk.setVisibility(View.GONE)
+            exportBtn.setVisibility(View.VISIBLE)
+            startBtn.setVisibility(View.GONE)
+            rules.setText(" ")
+
+        }
+
         accueilBtn.setOnClickListener{
             val intent = Intent(this, AccueilActivity::class.java)
             startActivity(intent)
@@ -47,8 +55,9 @@ class MusicActivity : AppCompatActivity() {
     private val bk :TextView by lazy  { findViewById(R.id.backgroud) }
     private val accueilBtn : Button by lazy { findViewById(R.id.backacceuil)}
     private val noteTxt :TextView by lazy  { findViewById(R.id.textView5) }
-
-
+    private val votreNote :TextView by lazy  { findViewById(R.id.textView4) }
+    private val rules:TextView by lazy  { findViewById(R.id.textView14) }
+    private val startBtn : Button by lazy { findViewById(R.id.startBtn)}
 
 
     private fun configDrag() {
@@ -140,11 +149,13 @@ class MusicActivity : AppCompatActivity() {
 
         val Finalnote  = note.roundToInt().toString()
         noteTxt.setText(Finalnote)
+        votreNote.setText("Votre note :")
         Log.d("list :", note.toString())
 
     }
 
 }
+
 
 
 

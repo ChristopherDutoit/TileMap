@@ -42,7 +42,7 @@
         android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/MusicGameView"
         app:layout_constraintHorizontal_bias="0.561"
@@ -55,6 +55,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="exporter"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/MusicGameView"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/MusicGameView"
+        app:layout_constraintTop_toTopOf="@+id/MusicGameView"
+        app:layout_constraintVertical_bias="0.935" />
+
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="commencer !"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/MusicGameView"
@@ -64,10 +77,24 @@
         app:layout_constraintVertical_bias="0.935" />
 
     <TextView
+        android:id="@+id/textView14"
+        android:layout_width="601dp"
+        android:layout_height="274dp"
+        android:text="Oh non, le DS de théorie du signal va commencer ! Tu dois remettre les signaux à la bonne place ET TU DOIS SURTOUT AVOIR LA MOYENNE."
+        android:textAlignment="center"
+        android:textColor="#FBF9F9"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/exportBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/MusicGameView"
+        app:layout_constraintTop_toTopOf="@+id/MusicGameView"
+        app:layout_constraintVertical_bias="0.183" />
+
+    <TextView
         android:id="@+id/textView4"
         android:layout_width="291dp"
         android:layout_height="65dp"
-        android:text="Votre note :"
         android:textAlignment="center"
         android:textColor="#FBF9F9"
         android:textSize="34sp"
