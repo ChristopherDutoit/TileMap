@@ -20,7 +20,7 @@ class finalscreen : AppCompatActivity() {
             "notes", Context.MODE_PRIVATE)
          val music = sharedPref.getInt("music", -1)
         val puzzle :Int =  sharedPref.getInt("puzzle", -1)
-        val clicker :Int = sharedPref.getInt("clicker", -1)
+        val clicker :Int = sharedPref.getInt("clicker", -5)/5
 
         val moyenne :Int = (music+puzzle+clicker)/3
 
