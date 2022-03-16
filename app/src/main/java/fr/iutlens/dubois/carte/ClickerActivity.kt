@@ -60,7 +60,7 @@ class ClickerActivity : AppCompatActivity() {
     //Détermination de quelle variante du clicker vas être jouée.
     //Le nombre de variantes au clicker est 3 mais peut être augmenté tant que l'on alimente le when et que l'on crée la fonction adéquate
     private var minrdm: Int=1
-    private var maxrdm: Int=3
+    private var maxrdm: Int=2
 
     private var res: Int=rdm(minrdm,maxrdm)
 
@@ -160,6 +160,8 @@ class ClickerActivity : AppCompatActivity() {
                     in(1500..2999) -> diff=0.0045f
                     in(0..1499) -> diff=0.006f
                 }
+
+                findViewById<TextView>(R.id.temps).setText(""+millisUntilFinished / 1000+" s").toString()
             }
 
             //Ici une fonction pour dire ce qu'on vas faire quand le timer est fini. Idéalement retourner sur la carte mais j'ai tenté mais ça marche pas :/.
@@ -212,7 +214,7 @@ class ClickerActivity : AppCompatActivity() {
             override fun onTick(millisUntilFinished: Long) {
                 //Quand le timer est en train de tourner:
                     //On met à jour le texte qui indique le temps restant
-                //findViewById<TextView>(R.id.remaining).setText("Il reste "+millisUntilFinished / 1000+"secs").toString()
+                findViewById<TextView>(R.id.temps).setText(""+millisUntilFinished / 1000+" s").toString()
                     //On met à jour continuellement le score pour éviter des bugs type le dernier clic n'est pas pris en compte.
                 //findViewById<TextView>(R.id.test1).setText("Score: "+(100-(ajoutmj2*100)).toInt()+"/100").toString()
             }
@@ -227,13 +229,10 @@ class ClickerActivity : AppCompatActivity() {
                 winCond=0
                 //Et je fais disparaitre le timer puisqu'il ne sert plus à rien ici.
                 //findViewById<TextView>(R.id.remaining).setText("").toString()
+                this@ClickerActivity.finish()
             }
         }.start()
 
-    }
-
-    private fun minijeu3() {
-        //Pas d'idée de mini-jeu, si tu en as une envoie à Félix un MP
     }
 
     /*
