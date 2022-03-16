@@ -2,11 +2,13 @@ package fr.iutlens.dubois.carte
 
 //Ici tout les imports, voila
 import android.annotation.SuppressLint
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.Button
@@ -119,7 +121,8 @@ class ClickerActivity : AppCompatActivity() {
                 //findViewById<TextView>(R.id.test1).text=ajout.toString()
                 if (ajout>=1) { //Si le vertical bias est en-dessous de 1 (=si la flèche est trop basse)
                     //Alors on ne peut plus clicker et le titre change.
-                    title="Perdu !"
+                    title="Tu t'es endormi !"
+                    findViewById<TextView>(R.id.temps).setText("Tu t'es endormi ! Perdu !").toString()
                     imageView.setImageResource(R.drawable.ordi_win)
 
                 } else {
@@ -158,7 +161,14 @@ class ClickerActivity : AppCompatActivity() {
                     in(5000..5999) -> diff=0.002f
                     in(3000..4999) -> diff=0.0035f
                     in(1500..2999) -> diff=0.0045f
-                    in(0..1499) -> diff=0.006f
+                    in(50..1499) -> diff=0.006f
+                }
+
+                if(millisUntilFinished<=30) {
+                    ajout += -ajout
+                    diff += -diff
+                    progres(ajout)
+                    imageView.setImageResource(R.drawable.ordi_win)
                 }
 
                 findViewById<TextView>(R.id.temps).setText(""+millisUntilFinished / 1000+" s").toString()
@@ -168,10 +178,14 @@ class ClickerActivity : AppCompatActivity() {
             override fun onFinish() {
                 /*Sauvegarder dans un fichier préférences pour passer des varibales dans plusieurs activités.*/
                 winCond=0
-                this@ClickerActivity.finish()
+                imageView.setImageResource(R.drawable.ordi_win)
+                hey()
+
             }
             //.start pour commencer le timer.
         }.start()
+
+        imageView.setImageResource(R.drawable.ordi_win)
 
     }
 
@@ -229,7 +243,17 @@ class ClickerActivity : AppCompatActivity() {
                 winCond=0
                 //Et je fais disparaitre le timer puisqu'il ne sert plus à rien ici.
                 //findViewById<TextView>(R.id.remaining).setText("").toString()
-                this@ClickerActivity.finish()
+
+                val finalgrade: Int=(100-(ajoutmj2*100)).toInt();
+
+                val sharedPref = this@ClickerActivity.getSharedPreferences(
+                    "notes", Context.MODE_PRIVATE)
+                with (sharedPref.edit()) {
+                    putInt("clicker", finalgrade);
+                    apply()
+                }
+
+                test(finalgrade)
             }
         }.start()
 
@@ -260,5 +284,34 @@ class ClickerActivity : AppCompatActivity() {
         set.setVerticalBias(R.id.dark_arrow_clicker, fl)
         //Et enfin on remplace la flèche par son clone avec toutes les nouvelles modifications
         set.applyTo(constraintLayout)
+    }
+
+    private fun test(jaaj: Int) {
+        object : CountDownTimer(3000, 10) {
+            @SuppressLint("SetTextI18n")
+            override fun onTick(millisUntilFinished: Long) {
+                findViewById<TextView>(R.id.temps).setText("Score final: "+jaaj.toString()+" /100").toString()
+            }
+
+            @SuppressLint("SetTextI18n")
+            override fun onFinish() {
+                this@ClickerActivity.finish()
+            }
+        }.start()
+    }
+
+    private fun hey() {
+        object : CountDownTimer(3000, 10) {
+            @SuppressLint("SetTextI18n")
+            override fun onTick(millisUntilFinished: Long) {
+                findViewById<TextView>(R.id.temps).setText("Tu as réussi à ne pas t'endormir !").toString()
+                title="Tu as réussi à ne pas t'endormir !"
+            }
+
+            @SuppressLint("SetTextI18n")
+            override fun onFinish() {
+                this@ClickerActivity.finish()
+            }
+        }.start()
     }
 }

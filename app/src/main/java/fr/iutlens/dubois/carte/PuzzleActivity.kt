@@ -1,5 +1,6 @@
 package fr.iutlens.dubois.carte
 
+import android.content.Context
 import android.graphics.Matrix
 import android.os.Bundle
 import android.util.Log
@@ -31,15 +32,19 @@ class PuzzleActivity : AppCompatActivity() {
 
         SpriteSheet.register(R.drawable.piaf, 5, 4, this)
 
-        Toast.makeText(this, "! Objectif: place précisément les pièces du Puzzle !", Toast.LENGTH_LONG).show()
+        Toast.makeText(
+            this,
+            "! Objectif: place précisément les pièces du Puzzle !",
+            Toast.LENGTH_LONG
+        ).show()
 
         val adder: Button = findViewById(R.id.termine)
-        adder.setOnClickListener{
+        adder.setOnClickListener {
             end()
         }
 
         val retour: Button = findViewById(R.id.retour)
-        retour.setOnClickListener{
+        retour.setOnClickListener {
             finish()
         }
 
@@ -49,11 +54,14 @@ class PuzzleActivity : AppCompatActivity() {
     private fun configDrag() {
         // Création des différents éléments à afficher dans la vue
         val list = SpriteList() // Notre liste de sprites
-        for(i in 0 until 5*4){ // On crée plusieurs sprites aléatoires
-            list.add(BasicSprite(R.drawable.piaf, cir,
-                (cir.data.sizeX*Math.random()).toFloat(),
-                (cir.data.sizeY*Math.random()).toFloat(),
-                i)
+        for (i in 0 until 5 * 4) { // On crée plusieurs sprites aléatoires
+            list.add(
+                BasicSprite(
+                    R.drawable.piaf, cir,
+                    (cir.data.sizeX * Math.random()).toFloat(),
+                    (cir.data.sizeY * Math.random()).toFloat(),
+                    i
+                )
             )
         }
 
@@ -71,10 +79,14 @@ class PuzzleActivity : AppCompatActivity() {
     private fun onTouchDrag(
         point: FloatArray,
         event: MotionEvent,
-    ) : Boolean {
-        val list = gameView.sprite as? SpriteList ?: return false // On récupère la liste (quitte si erreur)
-        return when(event.action) {
-            MotionEvent.ACTION_DOWN -> list.setTarget(point[0], point[1]) != null // Sélection du sprite aux coordonnées cliquées
+    ): Boolean {
+        val list = gameView.sprite as? SpriteList
+            ?: return false // On récupère la liste (quitte si erreur)
+        return when (event.action) {
+            MotionEvent.ACTION_DOWN -> list.setTarget(
+                point[0],
+                point[1]
+            ) != null // Sélection du sprite aux coordonnées cliquées
             MotionEvent.ACTION_MOVE -> {
                 (list.target as? BasicSprite)?.let {
                     // On déplace le sprite sélectionné aux nouvelles coordonnées
@@ -93,8 +105,8 @@ class PuzzleActivity : AppCompatActivity() {
         }
     }
 
-     fun check(list: SpriteList) {
-        for(sprite in list.list){
+    fun check(list: SpriteList) {
+        for (sprite in list.list) {
             val basic = sprite as BasicSprite
 
             var erreur = 0f
@@ -102,7 +114,7 @@ class PuzzleActivity : AppCompatActivity() {
             val dx = basic.x - basic.ndx % 5 + 0.5f
             val dy = basic.y - basic.ndx / 4 + 0.5f
 
-            erreur +=  dx * dx + dy * dy
+            erreur += dx * dx + dy * dy
             //Log.d("erreur actuelle", "$erreur")
 
             val note = 20 - 2 * erreur
@@ -115,31 +127,39 @@ class PuzzleActivity : AppCompatActivity() {
 
             moyennePuzzle += note
         }
-       moyennePuzzle /= 20
+        moyennePuzzle /= 20
         //Log.d("moyenne", "${moyennePuzzle}")
     }
 
-    private fun end(){
-            val cont = findViewById<View>(R.id.constraintLayout)
-            val Moy: TextView = findViewById(R.id.Moyenne)
-            val Crit: TextView = findViewById(R.id.Critere)
-            Moy.text = Math.round(moyennePuzzle).coerceIn(0..20).toString()
-            cont.visibility = VISIBLE
+    private fun end() {
+        val cont = findViewById<View>(R.id.constraintLayout)
+        val Moy: TextView = findViewById(R.id.Moyenne)
+        val Crit: TextView = findViewById(R.id.Critere)
+        Moy.text = Math.round(moyennePuzzle).coerceIn(0..20).toString()
+        cont.visibility = VISIBLE
 
-        if(moyennePuzzle == 20f){
-            Crit.text = "Parfait"
-        }else{
-            if(moyennePuzzle >= 15f && moyennePuzzle < 20f){
-                Crit.text = "Très bien"
-            }else{
-                if (moyennePuzzle >= 10f && moyennePuzzle < 15f){
-                    Crit.text = "Bien"
-                }else{
-                    if(moyennePuzzle <= 10f){
-                        Crit.text = "Mauvais"
+        val sharedPref = this?.getSharedPreferences(
+            "notes", Context.MODE_PRIVATE
+        )
+        with(sharedPref.edit()) {
+            putInt("puzzle", moyennePuzzle.toInt())
+            apply()
+        }
+
+            if (moyennePuzzle == 20f) {
+                Crit.text = "Parfait"
+            } else {
+                if (moyennePuzzle >= 15f && moyennePuzzle < 20f) {
+                    Crit.text = "Très bien"
+                } else {
+                    if (moyennePuzzle >= 10f && moyennePuzzle < 15f) {
+                        Crit.text = "Bien"
+                    } else {
+                        if (moyennePuzzle <= 10f) {
+                            Crit.text = "Mauvais"
+                        }
                     }
                 }
             }
         }
     }
-}
