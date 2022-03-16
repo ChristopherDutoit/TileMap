@@ -2,8 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context=".MusicActivity">
 
     <fr.iutlens.dubois.carte.GameView
@@ -13,7 +15,107 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/backacceuil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quitter le mini jeu"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/MusicGameView"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/MusicGameView"
+        app:layout_constraintTop_toTopOf="@+id/MusicGameView"
+        app:layout_constraintVertical_bias="0.935" />
+
+    <TextView
+        android:id="@+id/backgroud"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#AE000000"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/MusicGameView"
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toStartOf="@+id/MusicGameView"
+        app:layout_constraintTop_toTopOf="@+id/MusicGameView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/exportBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="exporter"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/MusicGameView"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/MusicGameView"
+        app:layout_constraintTop_toTopOf="@+id/MusicGameView"
+        app:layout_constraintVertical_bias="0.935" />
+
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="commencer !"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/MusicGameView"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/MusicGameView"
+        app:layout_constraintTop_toTopOf="@+id/MusicGameView"
+        app:layout_constraintVertical_bias="0.935" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="601dp"
+        android:layout_height="274dp"
+        android:text="Oh non, le DS de théorie du signal va commencer ! Tu dois remettre les signaux à la bonne place ET TU DOIS SURTOUT AVOIR LA MOYENNE."
+        android:textAlignment="center"
+        android:textColor="#FBF9F9"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/exportBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/MusicGameView"
+        app:layout_constraintTop_toTopOf="@+id/MusicGameView"
+        app:layout_constraintVertical_bias="0.183" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="291dp"
+        android:layout_height="65dp"
+        android:textAlignment="center"
+        android:textColor="#FBF9F9"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/MusicGameView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/MusicGameView"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="291dp"
+        android:layout_height="65dp"
+        android:textAlignment="center"
+        android:textColor="#FBF9F9"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/MusicGameView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/MusicGameView"
+        app:layout_constraintVertical_bias="0.47000003" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
