@@ -8,13 +8,8 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
-import android.view.View
-import android.view.ViewTreeObserver
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 
@@ -34,6 +29,8 @@ class ClickerActivity : AppCompatActivity() {
     //private var timer: Int=1
     //La variable diff est la valeur avec laquelle le vertical bias vas être ajouté, en gros "la force du click".
     private var diff=0.0015f
+
+    private var gagne=1f
 
 
     /*
@@ -124,6 +121,7 @@ class ClickerActivity : AppCompatActivity() {
                     title="Tu t'es endormi !"
                     findViewById<TextView>(R.id.temps).setText("Tu t'es endormi ! Perdu !").toString()
                     imageView.setImageResource(R.drawable.ordi_win)
+                    gagne=0f
 
                 } else {
                     //Si on est toujours dans les conditions de victoire (la flèche n'est pas trop basse)
@@ -244,12 +242,12 @@ class ClickerActivity : AppCompatActivity() {
                 //Et je fais disparaitre le timer puisqu'il ne sert plus à rien ici.
                 //findViewById<TextView>(R.id.remaining).setText("").toString()
 
-                val finalgrade: Int=(100-(ajoutmj2*100)).toInt();
+                val finalgrade: Int=(100-(ajoutmj2*100)).toInt()
 
                 val sharedPref = this@ClickerActivity.getSharedPreferences(
                     "notes", Context.MODE_PRIVATE)
                 with (sharedPref.edit()) {
-                    putInt("clicker", finalgrade);
+                    putInt("clicker", finalgrade)
                     apply()
                 }
 
@@ -304,8 +302,14 @@ class ClickerActivity : AppCompatActivity() {
         object : CountDownTimer(3000, 10) {
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
-                findViewById<TextView>(R.id.temps).setText("Tu as réussi à ne pas t'endormir !").toString()
-                title="Tu as réussi à ne pas t'endormir !"
+                if (gagne==1f) {
+                    findViewById<TextView>(R.id.temps).setText("Tu as réussi à ne pas t'endormir !").toString()
+                    title="Tu as réussi à ne pas t'endormir !"
+                } else {
+                    findViewById<TextView>(R.id.temps).setText("Tu t'es endormi ! Perdu !").toString()
+                    title="Tu t'es endormi !"
+                }
+
             }
 
             @SuppressLint("SetTextI18n")
