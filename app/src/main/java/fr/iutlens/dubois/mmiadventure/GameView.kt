@@ -1,19 +1,17 @@
-package fr.iutlens.dubois.carte
+package fr.iutlens.dubois.mmiadventure
 
 import android.content.Context
 import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import fr.iutlens.dubois.carte.sprite.BasicSprite
-import fr.iutlens.dubois.carte.sprite.Sprite
-import fr.iutlens.dubois.carte.sprite.TiledArea
-import fr.iutlens.dubois.carte.transform.CameraTransform
-import fr.iutlens.dubois.carte.transform.FocusTransform
-import fr.iutlens.dubois.carte.utils.SpriteSheet
+import fr.iutlens.dubois.mmiadventure.sprite.BasicSprite
+import fr.iutlens.dubois.mmiadventure.sprite.Sprite
+import fr.iutlens.dubois.mmiadventure.sprite.TiledArea
+import fr.iutlens.dubois.mmiadventure.transform.CameraTransform
+import fr.iutlens.dubois.mmiadventure.transform.FocusTransform
+import fr.iutlens.dubois.mmiadventure.utils.SpriteSheet
 
 class GameView : View, View.OnTouchListener {
 

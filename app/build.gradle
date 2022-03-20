@@ -8,7 +8,7 @@ android {
     compileSdk 30
 
     defaultConfig {
-        applicationId "fr.iutlens.dubois.carte"
+        applicationId 'fr.iutlens.dubois.mmiadventure'
         minSdk 21
         targetSdk 30
         versionCode 1

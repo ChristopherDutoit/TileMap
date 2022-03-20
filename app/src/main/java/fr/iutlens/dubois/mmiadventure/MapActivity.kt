@@ -1,4 +1,4 @@
-package fr.iutlens.dubois.carte
+package fr.iutlens.dubois.mmiadventure
 
 import android.content.Context
 import android.content.Intent
@@ -8,12 +8,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.Toast
-import fr.iutlens.dubois.carte.sprite.BasicSprite
-import fr.iutlens.dubois.carte.sprite.SpriteList
-import fr.iutlens.dubois.carte.sprite.TiledArea
-import fr.iutlens.dubois.carte.transform.FitTransform
-import fr.iutlens.dubois.carte.transform.FocusTransform
-import fr.iutlens.dubois.carte.utils.SpriteSheet
+import fr.iutlens.dubois.mmiadventure.sprite.BasicSprite
+import fr.iutlens.dubois.mmiadventure.sprite.SpriteList
+import fr.iutlens.dubois.mmiadventure.sprite.TiledArea
+import fr.iutlens.dubois.mmiadventure.transform.FitTransform
+import fr.iutlens.dubois.mmiadventure.transform.FocusTransform
+import fr.iutlens.dubois.mmiadventure.utils.SpriteSheet
 import kotlin.math.abs
 
 class MapActivity : AppCompatActivity() {

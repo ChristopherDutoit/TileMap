@@ -1,15 +1,13 @@
-package fr.iutlens.dubois.carte
+package fr.iutlens.dubois.mmiadventure
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import fr.iutlens.dubois.carte.sprite.SpriteList
 
 class finalscreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

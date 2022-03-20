@@ -1,4 +1,4 @@
-package fr.iutlens.dubois.carte.sprite
+package fr.iutlens.dubois.mmiadventure.sprite
 
 interface TileMap {
     fun get(x : Int , y : Int) : Int

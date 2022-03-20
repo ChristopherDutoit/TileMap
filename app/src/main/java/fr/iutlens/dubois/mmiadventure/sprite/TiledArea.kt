@@ -1,8 +1,8 @@
-package fr.iutlens.dubois.carte.sprite
+package fr.iutlens.dubois.mmiadventure.sprite
 
 import android.graphics.Canvas
 import android.graphics.RectF
-import fr.iutlens.dubois.carte.utils.SpriteSheet
+import fr.iutlens.dubois.mmiadventure.utils.SpriteSheet
 
 class TiledArea(private val sprite: SpriteSheet,  val data: TileMap) : Sprite {
 

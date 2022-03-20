@@ -1,8 +1,8 @@
-package fr.iutlens.dubois.carte.transform
+package fr.iutlens.dubois.mmiadventure.transform
 
 import android.graphics.Matrix
-import fr.iutlens.dubois.carte.GameView
-import fr.iutlens.dubois.carte.sprite.Sprite
+import fr.iutlens.dubois.mmiadventure.GameView
+import fr.iutlens.dubois.mmiadventure.sprite.Sprite
 
 class FitTransform(val gameView: GameView, val sprite: Sprite, val fitMode : Matrix.ScaleToFit) :
     CameraTransform {

@@ -1,4 +1,4 @@
-package fr.iutlens.dubois.carte
+package fr.iutlens.dubois.mmiadventure
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

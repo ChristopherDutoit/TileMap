@@ -1,4 +1,4 @@
-package fr.iutlens.dubois.carte.sprite
+package fr.iutlens.dubois.mmiadventure.sprite
 
 import android.graphics.Canvas
 import android.graphics.RectF

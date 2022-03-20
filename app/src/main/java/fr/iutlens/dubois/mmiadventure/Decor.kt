@@ -1,6 +1,6 @@
-package fr.iutlens.dubois.carte
+package fr.iutlens.dubois.mmiadventure
 
-import fr.iutlens.dubois.carte.sprite.TileMap
+import fr.iutlens.dubois.mmiadventure.sprite.TileMap
 
 /**
  * Created by dubois on 27/12/2017.

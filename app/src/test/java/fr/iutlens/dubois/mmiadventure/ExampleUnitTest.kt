@@ -1,4 +1,4 @@
-package fr.iutlens.dubois.carte
+package fr.iutlens.dubois.mmiadventure
 
 import org.junit.Test
 

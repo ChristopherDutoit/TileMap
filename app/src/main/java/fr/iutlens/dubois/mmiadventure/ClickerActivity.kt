@@ -1,4 +1,4 @@
-package fr.iutlens.dubois.carte
+package fr.iutlens.dubois.mmiadventure
 
 //Ici tout les imports, voila
 import android.annotation.SuppressLint

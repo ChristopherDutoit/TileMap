@@ -1,4 +1,4 @@
-package fr.iutlens.dubois.carte.utils
+package fr.iutlens.dubois.mmiadventure.utils
 
 import android.content.Context
 import android.graphics.Bitmap

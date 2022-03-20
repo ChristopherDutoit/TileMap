@@ -1,9 +1,9 @@
-package fr.iutlens.dubois.carte.transform
+package fr.iutlens.dubois.mmiadventure.transform
 
 import android.graphics.Matrix
-import fr.iutlens.dubois.carte.GameView
-import fr.iutlens.dubois.carte.sprite.Sprite
-import fr.iutlens.dubois.carte.sprite.TiledArea
+import fr.iutlens.dubois.mmiadventure.GameView
+import fr.iutlens.dubois.mmiadventure.sprite.Sprite
+import fr.iutlens.dubois.mmiadventure.sprite.TiledArea
 
 class FocusTransform(val gameView: GameView, val tiledArea: TiledArea, var sprite: Sprite, var minTiles: Int) :
     CameraTransform {
